@@ -1,0 +1,11 @@
+{
+	"name": "architecture-website",
+	"build": {
+		"dockerfile": "dockerfile"
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {}
+	},
+	"forwardPorts": [8080],
+	"remoteUser": "vscode"
+}
