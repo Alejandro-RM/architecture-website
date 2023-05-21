@@ -1,0 +1,13 @@
+{% import 'macros/common-head.njk' as common_head %}
+<!DOCTYPE html>
+<html>
+	<head>
+		{{ common_head.headContent(script_name) }}
+		<script>const error_information = {{ error | dump | safe }};</script>
+	</head>
+
+	<body>
+		<noscript>You need to enable JavaScript to run this app.</noscript>
+		<div id="root"></div>
+	</body>
+</html>

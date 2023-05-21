@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build client side",
+            "type": "shell",
+            "command": "yarn run dev:client",
+            "presentation": {
+                "panel": "dedicated"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Start server side",
+            "type": "shell",
+            "command": "yarn run dev:server",
+            "presentation": {
+                "panel": "dedicated"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run",
+            "type": "shell",
+            "dependsOn": [
+                "Build client side",
+                "Start server side"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}

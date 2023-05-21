@@ -1,0 +1,16 @@
+https://react-bootstrap.github.io/components/navbar/
+https://web.dev/add-manifest/
+https://reactrouter.com/en/main/start/tutorial#tutorial
+https://stackoverflow.com/questions/52334591/how-to-handle-react-router-with-node-express-routing
+https://getbootstrap.com/docs/5.3/getting-started/introduction/
+https://stackoverflow.com/questions/51353178/get-webpack-to-include-html-files
+https://github.com/webpack-contrib/copy-webpack-plugin#context
+https://medium.com/free-code-camp/how-to-make-create-react-app-work-with-a-node-backend-api-7c5c48acb1b0
+https://github.com/esausilva/example-create-react-app-express/blob/master/client/package.json
+https://medium.com/@baphemot/understanding-react-deployment-5a717d4378fd
+https://create-react-app.dev/docs/proxying-api-requests-in-development/
+https://docs.npmjs.com/cli/v9/using-npm/workspaces?v=true
+https://classic.yarnpkg.com/en/docs/cli/workspace
+https://webpack.js.org/guides/asset-management/
+https://www.pluralsight.com/guides/how-to-set-react-router-default-route-redirect-to-home
+https://www.google.com/search?q=route+switch+react-router-dom&rlz=1C1CHBF_esMX922MX923&oq=Routes+vs+Switch+react+router&aqs=chrome.1.0i512j0i22i30j0i390i650l2.9277j0j7&sourceid=chrome&ie=UTF-8
