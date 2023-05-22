@@ -4,7 +4,7 @@ RUN sudo apt-get update
 RUN sudo apt-get upgrade -y
 RUN sudo apt-get install -y curl
 
-RUN sudo curl -sL -o- https://deb.nodesource.com/setup_18.x | bash
+RUN sudo curl -sL -o- https://deb.nodesource.com/setup_18.x | sudo bash
 RUN sudo apt-get -y install nodejs
 
 RUN sudo npm install -g npm yarn
