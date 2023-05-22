@@ -1,0 +1,6 @@
+image:
+  file: .gitpod.dockerfile
+
+vscode:
+  extensions:
+    - fabiospampinato.vscode-todo-plus
