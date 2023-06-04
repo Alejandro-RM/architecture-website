@@ -1,0 +1,16 @@
+{% block error_panel %}
+<div class="d-flex h-100 align-items-center justify-content-center">
+	<div class="card border-danger text-center d-md-inline-flex">
+		<!-- Card Header -->
+		<div class="card-header text-bg-danger">
+			<h3>{{error_status}}</h3>
+		</div>
+
+		<!-- Card Body -->
+		<div class="card-body">
+			<h5>{{error_message}}</h5>
+			<p>{{error}}</p>
+		</div>
+	</div>
+</div>
+{% endblock %}

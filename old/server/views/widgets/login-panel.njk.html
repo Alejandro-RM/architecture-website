@@ -1,0 +1,46 @@
+{% block login_panel %}
+<div class="card text-center d-inline-flex">
+	<!-- Card Header -->
+	<div class="card-header">
+		<!-- Logo -->
+		<img src="/logo.png" class="card-img-top w-25">
+	</div>
+
+	<!-- Card Body -->
+	<div class="card-body tab-content">
+		<h5 class="card-title">{{language['login-form']['welcome']}}</h5>
+		<p class="card-text">{{language['login-form']['welcome-message']}}</p>
+
+		<!-- Login form -->
+		<form id="login-form" class="d-flex flex-column justify-content-center needs-validation" action="/sessions/login" method="POST" novalidate>
+			<!-- Email field -->
+			<div class="input-group mb-3 has-validation">
+				<span class="input-group-text">
+					<i class="bi bi-envelope"></i>
+				</span>
+				<input type="email" class="form-control" placeholder="{{language['login-form']['email-example']}}" id="login-email-input" name="email" required>
+				<div class="invalid-feedback">{{language['login-form']['email-error']}}</div>
+			</div>
+
+			<!-- Password field -->
+			<div class="input-group mb-3 has-validation">
+				<span class="input-group-text">
+					<i class="bi bi-key"></i>
+				</span>
+				<input type="password" placeholder="{{language['login-form']['password-example']}}" class="form-control" id="login-password-input" name="password" required>
+				<div class="invalid-feedback">{{language['login-form']['password-error']}}</div>
+			</div>
+
+			<!-- Submit -->
+			<button type="submit" class="btn btn-primary">{{language['login-form']['login']}}</button>
+		</form>
+	</div>
+
+	<!-- Card Footer -->
+	<div class="card-footer">
+		{{language['login-form']['not-registered-yet']}} <a href="/sessions/signup">{{language['login-form']['signup']}}</a>
+	</div>
+</div>
+
+<script src="/form-validation.js"></script>
+{% endblock %}

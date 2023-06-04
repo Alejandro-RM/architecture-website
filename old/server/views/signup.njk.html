@@ -1,0 +1,26 @@
+{% import "utilities/include.njk.html" as inclusions %}
+<!DOCTYPE html>
+<html class="h-100" data-bs-theme="{{theme}}">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{{ inclusions.resources(theme) }}
+
+	<title>{{page_title}}</title>
+</head>
+
+<body class="h-100">
+	<!-- Navigation Bar -->
+	{% include "widgets/navigation-bar.njk.html" %}
+
+	<main class="d-flex flex-column justify-content-center align-items-center w-100">
+		<!-- Signup Panel -->
+		{% include "widgets/signup-panel.njk.html" %}
+	</main>
+
+	<!-- Footer -->
+	{% include "widgets/footer-panel.njk.html" %}
+</body>
+
+</html>

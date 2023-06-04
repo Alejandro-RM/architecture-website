@@ -1,0 +1,143 @@
+{% import "utilities/include.njk.html" as inclusions %}
+<!DOCTYPE html>
+<html data-bs-theme="{{theme}}">
+
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{{ inclusions.resources(theme) }}
+
+	<title>{{page_title}}</title>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+	{% include "widgets/navigation-bar.njk.html" %}
+
+	<main class="d-flex w-100 justify-content-center">
+		<div id="editor" class="w-75 bg-secondary"></div>
+	</main>
+
+    <!-- Footer -->
+	{% include "widgets/footer-panel.njk.html" %}
+
+<!-- EditorJS Blocks -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script><!-- Core -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script><!-- Header -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/paragraph@latest"></script><!-- Paragraph -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/image@latest"></script><!-- Image -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script><!-- List -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script><!-- Checklist -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script><!-- Table -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script><!-- Embed -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/warning@latest"></script><!-- Warning -->
+<script src="https://cdn.jsdelivr.net/npm/editorjs-alert@latest"></script><!-- Alert -->
+<script src="https://cdn.jsdelivr.net/npm/editorjs-toggle-block@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script><!-- Delimiter -->
+
+<!-- EditorJS Tools -->
+<script src="https://cdn.jsdelivr.net/npm/editorjs-text-alignment-blocktune@latest"></script><!-- Text Alignment -->
+<script src="https://cdn.jsdelivr.net/npm/editorjs-text-color-plugin@latest"></script><!-- Text Color and Marker -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script><!-- Marker -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/attaches@latest"></script><!-- Attaches -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/underline@latest"></script><!-- Underline -->
+<script src="https://cdn.jsdelivr.net/npm/@sotaproject/strikethrough@latest"></script><!-- Strikethrough -->
+
+<script>
+const editor = new EditorJS({
+	holder: 'editor',
+	readOnly: false,
+	tools: {
+		header: {
+			class: Header,
+			inlineToolbar: true,
+			tunes: ['align']
+		},
+		paragraph: {
+			class: Paragraph,
+			inlineToolbar: true,
+			tunes: ['align']
+		},
+		image: {
+			class: ImageTool,
+			inlineToolbar: true,
+			tunes: ['align']
+		},
+		list: {
+			class: List,
+			inlineToolbar: true,
+			tunes: ['align']
+		},
+		checklist: {
+			class: Checklist,
+			inlineToolbar: true,
+			tunes: ['align']
+		},
+		table: {
+			class: Table,
+			inlineToolbar: true,
+			tunes: ['align']
+		},
+		warning: {
+			class: Warning,
+			inlineToolbar: true,
+			tunes: ['align']
+		},
+		alert: {
+			class: Alert,
+			inlineToolbar: true,
+			tunes: ['align']
+		},
+		toggle: {
+			class: ToggleBlock,
+			inlineToolbar: true
+		},
+		delimiter: Delimiter,
+		underline: {
+			class: Underline,
+			inlineToolbar: true
+		},
+		strikethrough: {
+			class: Strikethrough,
+			inlineToolbar: true
+		},
+		color: {
+			class: ColorPlugin,
+			inlineToolbar: true,
+			config: {
+				type: 'text',
+				defaultColor: '#f5f5f5'
+			}
+		},
+		marker: {
+			class: ColorPlugin,
+			inlineToolbar: true,
+			config: {
+				type: 'marker',
+				defaultColor: '#f5f5f5'
+			}
+		},
+		align: {
+			class: AlignmentBlockTune,
+			inlineToolbar: true
+		},
+		embed: {
+			class: Embed,
+			inlineToolbar: true
+		},
+		attaches: {
+			class: AttachesTool,
+			config: {
+				endpoints: {
+					byFile: '/upload-file',
+					byUrl: '/fetch-url'
+				}
+			}
+		}
+	}
+});
+</script>
+
+</body>
+
+</html>

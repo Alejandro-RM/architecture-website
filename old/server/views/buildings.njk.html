@@ -1,0 +1,91 @@
+{% import "utilities/include.njk.html" as inclusions %}
+<!DOCTYPE html>
+<html data-bs-theme="{{theme}}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    {{ inclusions.resources(theme, ajax = true) }}
+
+	<title>{{page_title}}</title>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+	{% include "widgets/navigation-bar.njk.html" %}
+
+    <main class="d-flex flex-column justify-content-center align-items-center w-100">
+        <!-- Image gallery -->
+        <section class="w-75 py-4 py-xl-5 bg-secondary">
+			<!-- Container -->
+			<div class="container">
+				<!-- Header -->
+				<div class="row mb-5">
+					<div class="col-md-8 col-xl-6 text-center mx-auto">
+						<h2>Edificios</h2>
+						<p>Admira los edificios que nos regaló el Siglo XIX.</p>
+					</div>
+				</div>
+
+				<!-- Images -->
+				<div id="image-gallery" class="row gx-2 gy-2 row-cols-1 row-cols-md-2 row-cols-xl-3">
+					<div class="placeholder col"></div>
+					<div class="placeholder col"></div>
+					<div class="placeholder col"></div>
+					<div class="placeholder col"></div>
+					<div class="placeholder col"></div>
+					<div class="placeholder col"></div>
+				</div>
+			</div>
+        </section>
+        <hr>
+
+        <!-- Post section -->
+        <section class="w-75 bg-secondary">
+            <div class="container">
+            </div>
+        </section>
+
+        <!-- Buildings listing -->
+        <aside>
+            <!-- Hideable sidebar -->
+            <div class="offcanvas offcanvas-start" tabindex="-1" data-bs-backdrop="true" id="sidebar" aria-labelledby="offcanvas-label">
+                <!-- Sidebar header -->
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvas-label">Listado de edificios</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <!-- Sidebar content -->
+                <div class="offcanvas-body placeholder-glow">
+                    <ul id="listing">
+                        <div class="placeholder w-75"></div>
+                        <div class="placeholder w-75"></div>
+                        <div class="placeholder w-75"></div>
+                        <div class="placeholder w-75"></div>
+                        <div class="placeholder w-75"></div>
+                        <div class="placeholder w-75"></div>
+                        <div class="placeholder w-75"></div>
+                        <div class="placeholder w-75"></div>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Show sidebar button -->
+            <div class="inline-flex fixed-bottom ms-3 mb-3">
+                <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="offcanvas">
+                    <span><i class="bi bi-three-dots"></i></span>
+                </button>
+            </div>
+        </aside>
+    </main>
+    <hr>
+
+    <!-- Footer -->
+	{% include "widgets/footer-panel.njk.html" %}
+
+	<!-- Scripts -->
+	<script src="/buildings-updating.js"></script>
+</body>
+
+</html>

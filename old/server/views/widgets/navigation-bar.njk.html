@@ -1,0 +1,88 @@
+{% block navigation_bar %}
+<header>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <!-- Website logo and name -->
+            <a class="navbar-brand" href="{{navigation_bar.links[0].route}}">
+                <span><img class="m-2" src="{{navigation_bar.logo}}" style="width: 64px; height: 64px;"></span>
+                {{website_title}}
+            </a>
+
+            <!-- Collapser button -->
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+                <span><i class="bi bi-list"></i></span>
+            </button>
+
+            <!-- Collapsable content -->
+            <div class="collapse navbar-collapse d-md-flex justify-content-between" id="navcol-1">
+                <!-- Links -->
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					{% for link in navigation_bar.links %}
+					{% if not loop.first %}
+					{% if user.role in link.allowed_roles %}
+					<li class="nav-item">
+						<a class="nav-link" href="{{link.route}}">{{language[link.key]}}</a>
+					</li>
+					{% endif %}{% endif %}{% endfor %}
+				</ul>
+
+                <!-- Settings and search bar -->
+                <ul class="navbar-nav d-xl-flex align-items-xl-center">
+                    {% if user.role == 'guest' %}
+                    <!-- Login button -->
+                    <a href="/sessions/login" class="btn btn-outline-primary m-2">
+                        <i class="bi bi-person-circle"></i>
+                    </a>
+                    {% else %}
+                    <!-- User button -->
+                    <a href="/users/{{user.username}}" class="btn btn-outline-primary m-2">
+                        <img style="width: 32px; height: 32px;" src="{{user.profile_image_path}}"></img>
+                    </a>
+
+                    <!-- Logout button -->
+                    <form action="/sessions/logout" method="POST">
+                        <button class="btn btn-outline-primary m-2" type="submit">
+                            <i class="bi bi-box-arrow-right"></i>
+                        </button>
+                    </form>
+                    {% endif %}
+
+                    <!-- Theme switcher-->
+                    <button class="btn btn-outline-primary m-2" id="theme-toggler" type="button">
+                        <i class="bi bi-moon"></i>
+                    </button>
+
+                    <!-- Language -->
+                    <li class="nav-item dropdown">
+                        <!-- Icon and dropdown -->
+                        <button class="dropdown-toggle btn btn-outline-primary m-2" aria-expanded="false" data-bs-toggle="dropdown">
+                            <span><i class="bi bi-translate"></i></span>
+                        </button>
+
+                        <!-- Dropdown languages -->
+                        <div class="dropdown-menu">
+                            <!-- TODO: Add Nunjucks code to fetch all available languages -->
+                            <a class="dropdown-item" href="#">Español (ES)</a>
+                            <a class="dropdown-item" href="#">English (EN)</a>
+                        </div>
+                    </li>
+
+                    <!-- Search bar -->
+                    <li class="nav-item d-md-flex align-items-md-center">
+                        <!-- Text field -->
+                        <input type="search" placeholder="{{language['search']}}">
+
+                        <!-- Search button -->
+                        <button class="btn btn-outline-primary m-2" type="button">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<script src="/theme-toggling.js"></script>
+{% endblock %}

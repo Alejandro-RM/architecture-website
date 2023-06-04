@@ -1,0 +1,33 @@
+{% import "utilities/include.njk.html" as inclusions %}
+<!DOCTYPE html>
+<html class="h-100" data-bs-theme="{{theme}}">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{{ inclusions.resources(theme) }}
+
+	<title>{{page_title}}</title>
+</head>
+
+<body>
+	<!-- Navigation Bar -->
+	{% include "widgets/navigation-bar.njk.html" %}
+
+	<!-- Alert Messages -->
+	<aside>
+		{% if errors.length > 0 %}{% for error in errors %}
+		<div class="alert alert-danger">{{language['login-form'][error]}}</div>
+		{% endfor %}{% endif %}
+	</aside>
+
+	<main class="d-flex flex-column justify-content-center align-items-center w-100">
+		<!-- Login Panel -->
+		{% include "widgets/login-panel.njk.html" %}
+	</main>
+
+	<!-- Footer -->
+	{% include "widgets/footer-panel.njk.html" %}
+</body>
+
+</html>

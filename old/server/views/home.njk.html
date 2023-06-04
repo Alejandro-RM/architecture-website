@@ -1,0 +1,103 @@
+{% import "utilities/include.njk.html" as inclusions %}
+<!DOCTYPE html>
+<html data-bs-theme="{{theme}}">
+
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{{ inclusions.resources(theme) }}
+
+	<title>{{page_title}}</title>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+	{% include "widgets/navigation-bar.njk.html" %}
+
+    <main class="d-flex flex-column justify-content-center align-items-center w-100">
+        <!-- Preview main content -->
+        <section class="w-75 bg-secondary">
+            <!-- Carousel -->
+            <div class="carousel slide" data-bs-ride="carousel" id="carousel-1" style="height: 600px;">
+                <!-- Content -->
+                <div class="carousel-inner h-100">
+                    <!-- TODO: Add Nunjucks code to create slides of "popular" content -->
+                    <div class="carousel-item active h-100">
+                        <!-- Background image -->
+                        <img class="w-100 d-block position-absolute h-100 fit-cover" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" alt="Slide Image">
+
+                        <!-- Information -->
+                        <div class="container d-flex flex-column justify-content-center h-100">
+                            <div class="row">
+                                <div class="col-md-6 col-xl-4 offset-md-2">
+                                    <div class="opacity-75 p-5" style="background-color: var(--bs-light-bg-subtle); max-width: 350px;">
+                                        <h1 class="text-uppercase fw-bold">¿Por qué el Siglo XIX?</h1>
+                                        <p class="my-3">Porque sí... ¿Se requiere de otra explicación?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div>
+                    <a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+
+                <!-- Indicators -->
+                <!-- TODO: Add Nunjucks code to associate to slides -->
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
+                </ol>
+            </div>
+        </section>
+        <hr>
+
+        <!-- Display site sections overview -->
+        <section class="w-75 bg-secondary">
+            <!-- Container to center content -->
+            <div class="d-xl-flex justify-content-xl-center">
+                <!-- Card grouper -->
+                <!-- TODO: Add descriptions to every section -->
+                <div class="card-group flex-column w-75 my-3">
+                    <!-- Buildings -->
+                    <div class="card my-2">
+                        <img class="card-img-top w-100 d-block" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
+                        <div class="card-body" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
+                            <h4 class="card-title">{{language['buildings']}}</h4>
+                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+                    </div>
+
+                    <!-- Architectural spaces -->
+                    <div class="card my-2"><img class="card-img-top w-100 d-block" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
+                        <div class="card-body">
+                            <h4 class="card-title">{{language['architectural-spaces']}}</h4>
+                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+                    </div>
+
+                    <!-- People and builders -->
+                    <div class="card my-2"><img class="card-img-top w-100 d-block" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
+                        <div class="card-body">
+                            <h4 class="card-title">{{language['people-and-builders']}}</h4>
+                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+    </main>
+
+    <!-- Footer -->
+	{% include "widgets/footer-panel.njk.html" %}
+</body>
+
+</html>

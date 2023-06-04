@@ -1,47 +1,49 @@
 const Mongoose = require('mongoose');
-const Schema = Mongoose.Schema;
 
-const UserSchema = new Schema({
-	username: {
-		type: String,
-		maxLength: 100,
-		required: [true, 'Users must have a username']
-	},
+const UserSchema = new Mongoose.Schema({
 	first_name: {
 		type: String,
-		maxLength: 100,
-		required: [true, 'Users must have a first name']
+		maxLength: 100
 	},
 	last_name: {
 		type: String,
-		maxLength: 100,
-		required: [true, 'Users must have a last name']
+		maxLength: 100
 	},
 	email: {
 		type: String,
 		maxLength: 100,
-		required: [true, 'Users must have an email']
+        unique: true
+	},
+    account_number: {
+        type: Number,
+        required: true,
+        unique: true
+    },
+	profile_image: {
+		type: String,
+        default: null
+	},
+	role: {
+		type: String,
+		enum: ['administrator', 'user'],
+		default: 'user'
 	},
 	password: {
 		type: Buffer,
-		required: [true, 'Users must have a password']
+		required: true
 	},
 	salt: {
 		type: Buffer,
 		required: true
-	},
-	profile_image_path: {
-		type: String
-	},
-	role: {
-		type: String,
-		enum: ['administrator', 'student', 'user'],
-		default: 'user'
 	}
 });
 
 UserSchema.virtual('full_name').get(() => {
-	return this.first_name + ' ' + this.last_name;
+	return `${this.first_name} ${this.last_name}`;
 });
+
+UserSchema.virtual('images_path').get(() => {
+    return `/images/${this._id}`;
+})
 
 module.exports = Mongoose.model('users', UserSchema);

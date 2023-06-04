@@ -1,0 +1,80 @@
+{% block login_panel %}
+<div class="card text-center d-inline-flex">
+	<!-- Card Header -->
+	<div class="card-header">
+		<!-- Logo -->
+		<img src="/logo.png" class="card-img-top w-25">
+	</div>
+
+	<!-- Card Body -->
+	<div class="card-body tab-content">
+		<h5 class="card-title">{{language['signup-form']['welcome']}}</h5>
+		<p class="card-text">{{language['signup-form']['welcome-message']}}</p>
+
+		<!-- sign-up form -->
+		<form id="signup-form" class="d-flex flex-column justify-content-center needs-validation" action="/sessions/signup" method="POST" novalidate>
+			<!-- Email field -->
+			<div class="input-group mb-3 has-validation">
+				<span class="input-group-text">
+					<i class="bi bi-envelope"></i>
+				</span>
+				<input type="email" class="form-control" placeholder="{{language['signup-form']['email-example']}}" id="signup-email-input" name="email" required>
+				<div class="invalid-feedback">{{language['signup-form']['email-error']}}</div>
+			</div>
+
+			<!-- Password field -->
+			<div class="input-group mb-3 has-validation">
+				<span class="input-group-text">
+					<i class="bi bi-key"></i>
+				</span>
+				<input type="password" placeholder="{{language['signup-form']['password-example']}}" class="form-control" id="signup-password-input" name="password" required>
+				<div class="invalid-feedback">{{language['signup-form']['password-error']}}</div>
+			</div>
+
+			<!-- Confirm Password field -->
+			<div class="input-group mb-3 has-validation">
+				<span class="input-group-text">
+					<i class="bi bi-check-square"></i>
+				</span>
+				<input type="password" placeholder="{{language['signup-form']['confirm-password-example']}}" class="form-control" id="signup-confirm-password" name="confirm-password" required>
+				<div class="invalid-feedback">{{language['signup-form']['confirm-password-error']}}</div>
+			</div>
+
+			<!-- Name field -->
+			<div class="input-group mb-3 has-validation">
+				<span class="input-group-text">
+					<i class="bi bi-person"></i>
+				</span>
+				<input type="text" placeholder="{{language['signup-form']['first-name-example']}}" class="form-control" id="signup-first-name" name="first-name" required>
+				<div class="invalid-feedback">{{language['signup-form']['first-name-error']}}</div>
+				<input type="text" placeholder="{{language['signup-form']['last-name-example']}}" class="form-control" id="signup-last-name" name="last-name" required>
+				<div class="invalid-feedback">{{language['signup-form']['last-name-error']}}</div>
+			</div>
+
+			<!-- Profile image -->
+			<div class="input-group mb-3 has-validation">
+				<span class="input-group-text">
+					<i class="bi bi-image"></i>
+				</span>
+				<label for="signup-profile-image" class="form-control">{{language['signup-form']['profile-image-request']}}</label>
+				<input type="file" class="form-control" accept="image/*" id="signup-profile-image" name="profile-image">
+				<div class="invalid-feedback">{{language['signup-form']['profile-image-error']}}</div>
+			</div>
+
+			<!-- Role hidden field -->
+			<input type="hidden" name="role" value="user">
+
+			<!-- Submit -->
+			<button type="submit" class="btn btn-primary">{{language['signup-form']['signup']}}</button>
+		</form>
+
+			<!-- Card Footer -->
+	<div class="card-footer">
+		{{language['signup-form']['already-have-an-account']}} <a href="/sessions/login">{{language['signup-form']['login']}}</a>
+	</div>
+
+	</div>
+</div>
+
+<script src="/form-validation.js"></script>
+{% endblock %}

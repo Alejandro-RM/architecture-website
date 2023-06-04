@@ -1,0 +1,40 @@
+{
+	"language_code": "es",
+	"home": "Inicio",
+	"buildings": "Edificios",
+	"people-and-builders": "Personas y Constructoras",
+	"architectural-spaces": "Espacios Arquitectónicos",
+	"tests": "Pruebas",
+    "search": "Buscar...",
+	"login-form": {
+		"login": "Iniciar sesión",
+		"login-error": "Error de inicio de sesión: correo o contraseña incorrectos.",
+		"welcome": "Bienvenido",
+		"welcome-message": "Inicie sesión en el mejor sitio web de Arquitectura.",
+		"email-example": "correo@correo.ejemplo",
+		"email-error": "Correo inválido: ingrese un correo válido.",
+		"password-example": "contraseña",
+		"password-error": "Contraseña inválida: ingrese una contraseña válida.",
+		"not-registered-yet": "¿No está registrado aún?",
+		"signup": "Registrarse"
+	},
+	"signup-form": {
+		"signup": "Registrarse",
+		"welcome": "Bienvenido",
+		"welcome-message": "Registro de sesión en el mejor sitio web de Arquitectura.",
+		"email-example": "correo@correo.ejemplo",
+		"email-error": "Correo invalido: ingrese un correo que no este registrado.",
+		"password-example": "contraseña",
+		"password-error": "Contraseña invlida: no es una contraseña segura.",
+		"confirm-password-example": "confirmar su contraseña",
+		"confirm-password-error": "Contraseña incorrecta: su contraseña no coincide.",
+		"already-have-an-account": "¿Ya tienes una cuenta?",
+		"first-name-example": "nombre",
+		"first-name-error": "Es necesario que proporcione su nombre.",
+		"last-name-example": "apellidos",
+		"last-name-error": "Es necesario que proporcione su apellidos.",
+		"profile-image-request": "Imagen de perfil.",
+		"profile-image-error": "Por favor, suba una imagen.",
+		"login": "Inicia sesión"
+	}
+}
